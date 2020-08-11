@@ -1,18 +1,18 @@
-import binarySearch from '../src/binarySearch';
+import recursiveBinarySearch from '../src/recursiveBinarySearch';
 import { arraySample } from '../src/samples';
 
 test('Simple 1 to 10 array, should return index equal to number', () => {
     const idx = 8;
-    expect(binarySearch(arraySample, idx)).toEqual(idx);
+    expect(recursiveBinarySearch(arraySample, idx)).toEqual(idx);
 });
 
 test('Not found case, should return null', () => {
-    expect(binarySearch(arraySample, 100)).toBeNull();
+    expect(recursiveBinarySearch(arraySample, 100)).toBeNull();
 });
 
 test('Array with negative numbers', () => {
     expect(
-        binarySearch(
+        recursiveBinarySearch(
             arraySample.map((i) => i - 5),
             -3
         )
